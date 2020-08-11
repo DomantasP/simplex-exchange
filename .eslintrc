@@ -1,0 +1,26 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": "airbnb-base",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "require-atomic-updates": "warn",
+    "no-unused-vars": "off",
+    "array-callback-return": "off",
+    "max-len": ["error", { "code": 120 }],
+    "no-underscore-dangle": [2, { "allow": ["_id", "ses_mail", "from_to", "amount_eur"] }],
+    "camelcase": ["error", {"allow": ["ses_mail", "from_to", "amount_eur", "decimal_digits"]}],
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "no-param-reassign": [2, { "props": false }]
+  }
+}

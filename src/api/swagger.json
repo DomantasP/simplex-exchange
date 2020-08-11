@@ -1,0 +1,55 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple task for Simplex.",
+    "version": "1.0.0",
+    "title": "Simplex Exchange"
+  },
+  "paths": {
+    "/quote": {
+      "get": {
+        "summary": "Finds quote amount and exchange rate",
+        "description": "Provide quote amount, quote currency and base currency to get quote amount and exchange rate in return. Supported currencies ['USD', 'EUR', 'GBP', 'ILS']",
+        "operationId": "rateFindOne",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "base_currency",
+            "in": "query",
+            "description": "Currency exchange from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "quote_currency",
+            "in": "query",
+            "description": "Currency exchange to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "base_amount",
+            "in": "query",
+            "description": "Currency exchange from amount in cents",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
